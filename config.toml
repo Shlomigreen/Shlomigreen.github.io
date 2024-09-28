@@ -4,7 +4,7 @@ baseURL = "http://shlomigreen.github.io"
 theme = "LoveIt"
 
 # website title
-title = "Green Codes"
+title = "Shlomi Green"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -102,7 +102,7 @@ languageName = "English"
     # optional site title override for the app when added to an iOS home screen or Android launcher
     title = "My cool site"
     # whether to omit favicon resource links
-    noFavicon = true
+    noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
     svgFavicon = ""
     # Android browser theme color
@@ -139,7 +139,7 @@ languageName = "English"
       # title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "Data Scientist & Tech Lead"
+      subtitle = "AI / ML Engineer & Tech Lead"
       # whether to use typeit animation for subtitle
       typeit = false
       # whether to show social links
@@ -149,8 +149,9 @@ languageName = "English"
     [params.social]
       GitHub = "Shlomigreen"
       Linkedin = "shlomigreen/"
-      Medium = "@shlomigreen"
-      Kaggle = "shlomigreen"
+      Twitter = "thesholmigreen"
+      # Medium = "@shlomigreen"
+      # Kaggle = "shlomigreen"
 
   [params.page]
     [params.page.share]
