@@ -16,6 +16,16 @@ My first go-to solution was to **profile my code**. Results showed the Logistic 
 
 Frustrated, I asked a colleague for a fresh perspective. After some thought, his advice was to **measure execution time** to get a clearer picture of what was happening. That’s when it clicked—his advice reminded me that **CPU consumption and execution time are linked**.
 
+```rust
+// Original (inefficient) predict function
+INTERCEPT: f32 = ... ;
+COEFFICIENTS: CsVec<f32> = ... ;
+
+fn predict(features:&CsVec<f32>) -> f32 { 
+    COEFFICIENTS.dot(&features) + INTERCEPT
+}
+```
+
 ## The Problem with the Predict Function
 
 The `predict` function in Logistic Regression is pretty straightforward—compute the dot product of feature and coefficient vectors, then add the intercept. 
@@ -30,6 +40,16 @@ What I initially thought was a no-brainer (using sparse matrices with built-in `
 ## Why This Works
 
 You might wonder why this approach worked. The answer lies in Rust’s **dense vectors** allowing `O(1)` access to coefficients, while **sparse vectors** efficiently keep feature values and indices. This resulted in a major performance boost—cutting latency and CPU usage dramatically.
+
+```rust
+// New (efficient) predict function
+INTERCEPT: f32 = ... ;
+COEFFICIENTS: Vec<f32> = ... ;
+
+fn predict(features:&CsVec<f32>) -> f32 { 
+    features.indices().iter().map(|&i| COEFFICIENTS[i] * features.get(i).unwrap()).sum::<f32>() + INTERCEPT
+}
+```
 
 ## Key Takeaways:
 
