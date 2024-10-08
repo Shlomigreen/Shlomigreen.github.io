@@ -56,3 +56,7 @@ fn predict(features:&CsVec<f32>) -> f32 {
 1. **Don’t hesitate to ask for help**—fresh eyes can spot what you miss.
 2. **Always profile and measure execution time early**—it saves time and reveals the real issues.
 3. **Don’t blindly trust built-in functions**. While they’re good general solutions, custom implementations may be better suited for your needs.
+
+
+---
+If you like this post,  please let me know by following me on X or sharing it with your network. I'd love to hear your thoughts! - {{< person url="https://x.com/theshlomigreen" name="Shlomi Green" nick="@theshlomigreen" text="Author" picture="https://pbs.twimg.com/profile_images/1707313015517859840/8lWHx6VR_400x400.jpg" >}}
